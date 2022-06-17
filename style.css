@@ -19,6 +19,19 @@ body {
   color: #ffffff;
 }
 
+.header-statement {
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+.high-rating {
+  color: #3ba17c;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0);
+  text-align: center
+}
+
 main {
   padding: 6px;
   display: grid;
