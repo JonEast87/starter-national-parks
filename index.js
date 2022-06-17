@@ -3,10 +3,12 @@ const descriptions = document.querySelectorAll('.description-display'),
   parks = document.querySelectorAll('.park-display'),
   numberParks = parks.length,
   newElement = document.createElement('div'),
-  header = document.querySelector('header')
+  header = document.querySelector('header'),
+  firstBtn = document.querySelector('button'),
+  allBtns = document.querySelectorAll('.rate-button'),
+  nameSorter = document.querySelector('#name-sorter');
 
 newElement.innerText = `${numberParks} exciting parks to visit`
-
 newElement.classList.add('header-statement')
 header.appendChild(newElement)
 
@@ -28,3 +30,39 @@ for (let rating of ratings) {
     rating.classList.remove('value')
   }
 }
+
+allBtns.forEach((btn) => {
+  btn.addEventListener('click', (event) => {
+    const park = event.target.parentNode
+    park.style.background = '#c8e6c9'
+  })
+})
+
+nameSorter.addEventListener('click', (event) => {
+  event.preventDefault()
+
+  const main = document.querySelector('main')
+
+  const parksList = main.querySelectorAll('.park-display')
+
+  main.innerHTML = ''
+  
+  parksArray = Array.from(parksList)
+
+  parksArray.sort((parkA, parkB) => {
+    const parkAName = parkA.querySelector('h2').innerText
+    const parkBName = parkB.querySelector('h2').innerText
+
+    if (parkAName < parkBName) {
+      return -1
+    } else if (parkAName > parkBName) {
+      return 1
+    } else {
+      return 0
+    }
+  })
+
+  parksArray.forEach((park) => {
+    main.appendChild(park)
+  })
+})
