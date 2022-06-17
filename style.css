@@ -75,6 +75,12 @@ main {
   flex: 1;
 }
 
+.sorter {
+  width: 90%;
+  margin: 0 auto;
+  padding: 6px;
+}
+
 .stats {
   display: flex;
   padding: 4px;
