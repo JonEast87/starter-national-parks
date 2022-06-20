@@ -37,7 +37,7 @@ const submitHandler = (event) => {
 
 const renderOnePark = (park) => {
   // Get the individal properties of the park
-  const { name: location, description, established, area, rating } = park
+  const { name, location, description, established, area, rating } = park
 
   const content = `
     <section class="park-display>
